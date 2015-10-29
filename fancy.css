@@ -16,6 +16,7 @@ nav {
   padding:15px 20px;
   background: #557DC6;
   color:#000000;
+  cursor:pointer;
 }
 .nav-item:first-child a {
   border-radius:5px 0 0 5px;
@@ -32,6 +33,7 @@ nav {
   float:left;
   *display:inline;
   zoom:1;
+  cursor:pointer;
 }
 .cssSwitchItem a {
   display:block;
