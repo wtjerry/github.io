@@ -2,7 +2,7 @@ function loadPage(){
   $.ajax({
     url: 'main.html',
     datatype:"html",
-    method: "POST"
+    method: "GET"
   })
   .done(function(data) {
     $('div.content').html(data);
@@ -29,7 +29,7 @@ function navigateTo(content_nmr){
   $.ajax({
     url: linkname,
     datatype:"html",
-    method: "POST"
+    method: "GET"
   })
   .done(function(data) {
     $('div.content').html(data);
