@@ -1,1 +1,34 @@
-huhu
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="fancy.css" title="Standard-Layout" rel="stylesheet" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/js.cookie.js"></script>
+    <script src="scripts/canvas.js"></script>
+    <script src="scripts/ajax.js"></script>
+    <script src="scripts/cssSwitcher.js"></script>
+    <title>the very best html5 site</title>
+  </head>
+  <body onload='loadPage()'>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-item"><a onclick='navigateTo(0)'>Home</a></li>
+          <li class="nav-item"><a onclick='navigateTo(1)'>canvas</a></li>
+          <li class="nav-item"><a onclick='navigateTo(2)'>Misc</a></li>
+          <li class="nav-item"><a onclick='navigateTo(3)'>some Other page</a></li>
+        </ul>
+        <ul>
+          <li class="cssSwitchItem"><a onclick='switchCss(0)'>fancy css</a></li>
+          <li class="cssSwitchItem"><a onclick='switchCss(1)'>boring css</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="content">
+      </div>
+    </main>
+  </body>
+</html>
+ 
