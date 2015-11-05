@@ -9,12 +9,17 @@ function loadChatMessages() {
 
 function formClick() {
   var message = document.form.message.value;
+    document.form.message.value = "";
   
-  document.form.message.value = "";
+  var chatBox = document.getElementById("chatBox");
+  var chatBoxMessages = chatBox.innerHtml;
+  if (chatBoxMessages == "undefined") {
+    chatBoxMessages = "";
+  }
   
-  var allMessages = document.getElementById("chatBox").innerHtml + "<br>" + message;
+  var allMessages = chatBoxMessages + "<br>" + message;
   
-  document.form.chatBox.value = allMessages;
+  chatBox.innerHtml = allMessages;
   Cookies.set('chatMessages', allMessages, { expires: 14 });
   
   navigateTo(4);
