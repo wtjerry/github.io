@@ -12,7 +12,7 @@ function formClick() {
   
   document.form.message.value = "";
   
-  var allMessages = document.form.getelementById("chatbox").innerHtml + "<br>" + message;
+  var allMessages = document.form.getelementById("chatBox").innerHtml + "<br>" + message;
   
   document.form.chatBox.value = allMessages;
   Cookies.set('chatMessages', allMessages, { expires: 14 });
