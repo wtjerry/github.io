@@ -24,6 +24,9 @@ function navigateTo(content_nmr){
     case 3:
         linkname='someOtherPage.html';
         break;
+    case 4:
+        linkname='form.html';
+        break;
   }
          
   $.ajax({
