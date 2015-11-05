@@ -3,7 +3,7 @@ function loadChatMessages() {
     
   var chatMessages = Cookies.get('chatMessages');
   if (chatMessages !== undefined) {
-    document.form.message.value = chatMessages;
+    document.getElementById("chatBox").innerHtml = chatMessages;
   }
 }
 
@@ -13,7 +13,7 @@ function formClick() {
   
   var chatBox = document.getElementById("chatBox");
   var chatBoxMessages = chatBox.innerHtml;
-  if (chatBoxMessages == "undefined") {
+  if (chatBoxMessages == undefined) {
     chatBoxMessages = "";
   }
   
