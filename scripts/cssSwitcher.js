@@ -1,8 +1,7 @@
-function tryInitalizeCssFromCookie(args) {
+function tryInitalizeCssFromCookie() {
   
   var allCookies = Cookies.get();
-  
-  
+    
   var cssStyle = Cookies.get('cssStyle');
   if (cssStyle !== undefined) {
     $("link[rel=stylesheet]").attr({href : cssStyle});
@@ -24,5 +23,4 @@ function switchCss(cssFileNumber) {
   $("link[rel=stylesheet]").attr({href : cssFileName});
   
   Cookies.set('cssStyle', cssFileName, { expires: 14 });
-  
 }

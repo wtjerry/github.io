@@ -1,13 +1,5 @@
 function loadPage(){
-  $.ajax({
-    url: 'main.html',
-    datatype:"html",
-    method: "GET"
-  })
-  .done(function(data) {
-    $('div.content').html(data);
-    tryInitalizeCssFromCookie();
-  });
+  navigateTo(0);
 }
 
 function navigateTo(content_nmr){
@@ -36,6 +28,14 @@ function navigateTo(content_nmr){
   })
   .done(function(data) {
     $('div.content').html(data);
+    afterNavigateTo(linkname);
   });
+}
 
+function afterNavigateTo(linkname) {
+  tryInitalizeCssFromCookie();
+  
+  if (linkname == "form.html") {
+    loadChatMessages();
+  }
 }
