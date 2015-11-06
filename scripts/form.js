@@ -3,7 +3,7 @@ function loadChatMessages() {
     
   var chatMessages = Cookies.get('chatMessages');
   if (chatMessages !== undefined) {
-    document.getElementById("chatBox").innerHtml = chatMessages;
+    document.getElementById("chatBox").innerHTML = chatMessages;
   }
 }
 
@@ -12,15 +12,13 @@ function formClick() {
     document.form.message.value = "";
   
   var chatBox = document.getElementById("chatBox");
-  var chatBoxMessages = chatBox.innerHtml;
+  var chatBoxMessages = chatBox.innerHTML;
   if (chatBoxMessages == undefined) {
     chatBoxMessages = "";
   }
   
-  var allMessages = chatBoxMessages + "<br>" + message;
-  
-  chatBox.innerHtml = allMessages;
+  var allMessages = chatBoxMessages + "&#13;&#10;" + message;
+  console.log(allMessages);
+  chatBox.innerHTML = allMessages;
   Cookies.set('chatMessages', allMessages, { expires: 14 });
-  
-  navigateTo(4);
 }

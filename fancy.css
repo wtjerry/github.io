@@ -48,6 +48,12 @@ nav {
 
 .hidden { visibility:hidden }
 
+textarea {
+    overflow-y: scroll;
+    height: 100px;
+    resize: none; 
+}
+
 @media only screen and (max-width: 500px) {
   .nav {
     margin-left:0px;
