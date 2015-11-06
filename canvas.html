@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <div>
+  Look out for a "hidden" feature
+  <br>
   <canvas class="canvas" id="can1" width="400" height="400" > <!-- width AND height have to be set here and not in css, otherwise the coordinate system of the canvas is not initialized-->
   </canvas>
   <script>
     gameCanvasStart();
   </script>
   <br>
-  <button class="hidden" id="mouseMovedCountBtn" />
-  <button class="hidden" id="mouseXBtn" />
-  <button class="hidden" id="mouseYBtn" />
-  <button class="hidden" id="hitCountBtn" />
+  <label class="hidden" for="mouseMovedCount">Mouse moved count</label>
+  <div class="hidden" id="mouseMovedCount" />
+  <br>
+  <label class="hidden" for="mouseX">x position</label>
+  <div class="hidden" id="mouseX" />
+  <br>
+  <label class="hidden" for="mouseY">y position</label>
+  <div class="hidden" id="mouseY" />
+  <br>
+  <label class="hidden" for="hitCount">hit count</label>
+  <div class="hidden" id="hitCount" />
 </div>

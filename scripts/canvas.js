@@ -36,18 +36,18 @@ function mouseMoved(e) {
   if (mouseX >= currentXOfCtx && mouseX <= currentXOfCtx + TARGET_WIDTH
       &&  mouseY >= currentYOfCtx && mouseY <= currentYOfCtx + TARGET_HEIGHT) {
     hitCount += 1;
-    document.getElementById("hitCountBtn").innerHTML = hitCount;
+    document.getElementById("hitCount").innerHTML = hitCount;
   }
 
-  document.getElementById("mouseXBtn").innerHTML = mouseX;
-  document.getElementById("mouseYBtn").innerHTML = mouseY;
+  document.getElementById("mouseX").innerHTML = mouseX;
+  document.getElementById("mouseY").innerHTML = mouseY;
   
-  var btn1 = document.getElementById("mouseMovedCountBtn");
+  var btn1 = document.getElementById("mouseMovedCount");
   var btn1Content = btn1.innerHTML;
   
   currentCount += 1;
   
-  document.getElementById("mouseMovedCountBtn").innerHTML = currentCount;
+  document.getElementById("mouseMovedCount").innerHTML = currentCount;
 }
 
 function moveRect() {
