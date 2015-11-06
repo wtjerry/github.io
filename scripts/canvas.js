@@ -19,25 +19,15 @@ function gameCanvasStart() {
     ctx = can1.getContext("2d");
     
     can1.onmousemove = mouseMoved;
+    can1.onclick = mouseClicked;
     
     setInterval(moveRect, INTERVAL)
     moveRect();
 }
 
 function mouseMoved(e) {
-
-  var elemRect = document.getElementById("can1").getBoundingClientRect();
-  var elementOffsetTop = elemRect.top;
-  var elementOffsetLeft = elemRect.left;
-  
-  mouseX = e.pageX - elementOffsetLeft;
-  mouseY = e.pageY - elementOffsetTop;
-  
-  if (mouseX >= currentXOfCtx && mouseX <= currentXOfCtx + TARGET_WIDTH
-      &&  mouseY >= currentYOfCtx && mouseY <= currentYOfCtx + TARGET_HEIGHT) {
-    hitCount += 1;
-    document.getElementById("hitCount").innerHTML = hitCount;
-  }
+  mouseX = getMouseXPosition(e)
+  mouseY = getMouseYPosition(e)
 
   document.getElementById("mouseX").innerHTML = mouseX;
   document.getElementById("mouseY").innerHTML = mouseY;
@@ -48,6 +38,33 @@ function mouseMoved(e) {
   currentCount += 1;
   
   document.getElementById("mouseMovedCount").innerHTML = currentCount;
+}
+
+function mouseClicked(e) {
+  mouseX = getMouseXPosition(e)
+  mouseY = getMouseYPosition(e)
+  
+  if (mouseX >= currentXOfCtx && mouseX <= currentXOfCtx + TARGET_WIDTH
+      &&  mouseY >= currentYOfCtx && mouseY <= currentYOfCtx + TARGET_HEIGHT) {
+    hitCount += 1;
+    document.getElementById("hitCount").innerHTML = hitCount;
+  }
+}
+
+function getMouseXPosition(e) {
+  var elemRect = document.getElementById("can1").getBoundingClientRect();
+  var elementOffsetLeft = elemRect.left;
+  mouseX = e.pageX - elementOffsetLeft;
+  
+  return mouseX;
+}
+
+function getMouseYPosition(e) {
+  var elemRect = document.getElementById("can1").getBoundingClientRect();
+  var elementOffsetTop = elemRect.top;
+  mouseY = e.pageY - elementOffsetTop;
+  
+  return mouseY;
 }
 
 function moveRect() {
