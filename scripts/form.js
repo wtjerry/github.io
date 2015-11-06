@@ -8,6 +8,12 @@ function loadChatMessages() {
 }
 
 function formClick() {
+  var isValid = validateForm();
+  if (!isValid) {
+    alert("muhahaha something is wrong");
+    return;
+  }
+  
   var message = createMessage();
   
   var chatBox = document.getElementById("chatBox");
@@ -23,6 +29,18 @@ function formClick() {
 
   chatBox.innerHTML = allMessages;
   Cookies.set('chatMessages', allMessages, { expires: 14 });
+}
+
+function validateForm() {
+  if (document.form.name.value == "") {
+    return false;
+  }
+  
+  if (document.form.message.value == "") {
+    return false;
+  }
+  
+  return true;
 }
 
 function createMessage() {
