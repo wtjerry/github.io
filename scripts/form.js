@@ -8,17 +8,30 @@ function loadChatMessages() {
 }
 
 function formClick() {
-  var message = document.form.message.value;
-    document.form.message.value = "";
+  var message = createMessage();
   
   var chatBox = document.getElementById("chatBox");
   var chatBoxMessages = chatBox.innerHTML;
-  if (chatBoxMessages == undefined) {
-    chatBoxMessages = "";
-  }
   
-  var allMessages = chatBoxMessages + "&#13;&#10;" + message;
-  console.log(allMessages);
+  var allMessages = "";
+  if (chatBoxMessages == undefined) {
+    allMessages = message;
+  }
+  else {
+    allMessages = chatBoxMessages + "<br>" + message;
+  }
+
   chatBox.innerHTML = allMessages;
   Cookies.set('chatMessages', allMessages, { expires: 14 });
+}
+
+function createMessage() {
+  var userName = document.form.name.value;
+  document.form.name.value = "";
+  
+  var text = document.form.message.value;
+  document.form.message.value = "";
+  
+  var message = "<b>" + userName + "</b>" + ":  " + text;
+  return message;
 }

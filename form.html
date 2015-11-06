@@ -6,12 +6,16 @@
   <br>
   It was never more interesting to have a chat with anyone.
   <br>
-  <textarea id="chatBox" readonly=true scroll></textarea>
+  <div id="chatBox" class="chatBox" ></div>
   <br>
   <form name="form" >
+    <label for="name">name</label>
+    <input size="20" name="name" id="name" />
+    <br>
     <label for="message" >message</label>
-    <input size="20" name="message" id="message" />
-    <button type="reset">Reset</button>
+    <input size="50" name="message" id="message" />
+    <br>
     <button type="button" onclick="formClick()">send</button>
+    <button type="reset">Reset</button>
   </form>
 </div>
